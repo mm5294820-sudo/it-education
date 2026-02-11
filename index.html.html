@@ -20,6 +20,11 @@ body{
     text-align:center;
 }
 
+.upload-box h2{
+    color:#1e6fa8;
+    margin-bottom:15px;
+}
+
 .upload-btn{
     background:#1e6fa8;
     color:#fff;
@@ -34,12 +39,18 @@ body{
     background:#155d8b;
 }
 
-#fileSize{
+.upload-info{
     margin-top:15px;
-    font-size:16px;
+    font-size:14px;
+    color:#555;
+    text-align:left;
+}
+
+#imageNumber{
+    margin-top:15px;
+    font-size:18px;
     font-weight:bold;
     color:#1e6fa8;
-    display:none;
 }
 </style>
 </head>
@@ -54,12 +65,24 @@ body{
         + Upload Picture
     </button>
 
-    <!-- Yahan sirf image ka size show hoga -->
-    <div id="fileSize"></div>
+    <!-- Instructions -->
+    <div class="upload-info">
+        <ul>
+            <li>White or blue background</li>
+            <li>No file size limit</li>
+            <li>File type: jpg, jpeg, png</li>
+            <li>Recent passport size picture</li>
+            <li>Face clearly visible without glasses</li>
+        </ul>
+    </div>
+
+    <!-- Yahan sirf image number show hoga -->
+    <div id="imageNumber"></div>
 
 </div>
 
 <script>
+let imageCount = 0;
 
 function openPicker(){
     document.getElementById("photo").click();
@@ -70,17 +93,20 @@ document.getElementById("photo").addEventListener("change", function(){
     const file = this.files[0];
     if(!file) return;
 
-    // Unlimited size (no limit check)
+    if(!file.type.startsWith("image/")){
+        alert("Please select a valid image file");
+        this.value = "";
+        return;
+    }
 
-    // Size convert to MB
-    const sizeMB = (file.size / (1024 * 1024)).toFixed(2);
+    imageCount++;
 
-    const sizeBox = document.getElementById("fileSize");
-    sizeBox.textContent = "Image Size: " + sizeMB + " MB";
-    sizeBox.style.display = "block";
+    // Sirf image number show kare
+    const numberBox = document.getElementById("imageNumber");
+    numberBox.textContent = "Image " + imageCount;
 
+    this.value = ""; // taake dobara same image bhi select ho sake
 });
-
 </script>
 
 </body>
