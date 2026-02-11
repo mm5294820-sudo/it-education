@@ -1,33 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <title></title>
+<meta charset="UTF-8">
+<title>Upload Picture</title>
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f6f9;
+}
+
+.upload-box{
+    width:90%;
+    max-width:400px;
+    margin:20px auto;
+    padding:20px;
+    border:2px dashed #ccc;
+    border-radius:12px;
+    background:#fff;
+    text-align:center;
+}
+
+.upload-box h2{
+    color:#1e6fa8;
+    margin-bottom:15px;
+}
+
+.upload-btn{
+    background:#1e6fa8;
+    color:#fff;
+    padding:12px 25px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.upload-btn:hover{
+    background:#155d8b;
+}
+
+.upload-info{
+    margin-top:15px;
+    font-size:14px;
+    color:#555;
+    text-align:left;
+}
+
+#preview{
+    margin-top:15px;
+    max-width:100%;
+    border-radius:8px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.2);
+}
+</style>
 </head>
-
 <body>
-    <nav>
-        <div class="head">
-            <img src="assest/ChatGPT_Image_Feb_9__2026__01_04_36_PM-removebg-preview.png" alt="">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-    </nav>
 
-    <div class="bgc">
-        <div id="menu">
-            <div class="logo">
-                <img src="assest/ChatGPT_Image_Feb_9__2026__01_04_36_PM-removebg-preview.png" alt="">
-                <i class="fa-solid fa-xmark"></i>
-            </div>
-        </div>
+<div class="upload-box">
+    <h2>Upload Picture</h2>
+
+    <!-- Hidden fallback input -->
+    <input type="file" id="photo" accept="image/png, image/jpeg" hidden>
+
+    <button class="upload-btn" onclick="openPicker()">
+        + Upload Picture
+    </button>
+
+    <div class="upload-info">
+        <ul>
+            <li>White or blue background</li>
+            <li>File size less than 1MB</li>
+            <li>File type: jpg, jpeg, png</li>
+            <li>Recent passport size picture</li>
+            <li>Face clearly visible without glasses</li>
+        </ul>
     </div>
 
+    <!-- Image preview -->
+    <img id="preview" src="" alt="" hidden>
+</div>
 
+<script>
+// Modern API + fallback
+async function openPicker() {
+    // Modern File System Access API supported
+    if (window.showOpenFilePicker) {
+        try {
+            const [fileHandle] = await window.showOpenFilePicker({
+                types: [{
+                    description: 'Images',
+                    accept: {
+                        'image/*': ['.png', '.jpg', '.jpeg']
+                    }
+                }],
+                excludeAcceptAllOption: true,
+                multiple: false
+            });
+
+            const file = await fileHandle.getFile();
+
+            if(file.size > 1024 * 1024){
+                alert("File size must be less than 1MB");
+                return;
+            }
+
+            showPreview(file);
+
+        } catch(err) {
+            console.log("User cancelled or error:", err);
+        }
+    } else {
+        // Fallback for older devices
+        document.getElementById("photo").click();
+    }
+}
+
+// Fallback input listener
+document.getElementById("photo").addEventListener("change", function(){
+    const file = this.files[0];
+    if(file.size > 1024 * 1024){
+        alert("File size must be less than 1MB");
+        this.value = "";
+    } else {
+        showPreview(file);
+    }
+});
+
+// Show image preview
+function showPreview(file){
+    const preview = document.getElementById("preview");
+    const reader = new FileReader();
+    reader.onload = function(e){
+        preview.src = e.target.result;
+        preview.hidden = false;
+    }
+    reader.readAsDataURL(file);
+}
+</script>
 
 </body>
-
-</html>
+    </html>
