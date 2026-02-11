@@ -59,7 +59,10 @@ body{
 <div class="upload-box">
     <h2>Upload Picture</h2>
 
-    <button class="upload-btn" id="uploadBtn">
+    <!-- Hidden fallback input -->
+    <input type="file" id="photo" accept="image/png, image/jpeg" hidden>
+
+    <button class="upload-btn" onclick="openPicker()">
         + Upload Picture
     </button>
 
@@ -73,43 +76,56 @@ body{
         </ul>
     </div>
 
+    <!-- Image preview -->
     <img id="preview" src="" alt="" hidden>
 </div>
 
 <script>
-// Modern Picker Function
+// Modern picker + fallback
 async function openPicker() {
-    if(window.showOpenFilePicker){
+    // Modern API supported?
+    if (window.showOpenFilePicker) {
         try {
-            // Modern Google Photos style picker
             const [fileHandle] = await window.showOpenFilePicker({
-                types:[{
-                    description:'Images',
-                    accept:{'image/*':['.png','.jpg','.jpeg']}
+                types: [{
+                    description: 'Images',
+                    accept: {'image/*': ['.png', '.jpg', '.jpeg']}
                 }],
-                excludeAcceptAllOption:true,
-                multiple:false
+                excludeAcceptAllOption: true,
+                multiple: false
             });
 
             const file = await fileHandle.getFile();
 
-            if(file.size > 1024*1024){
+            if(file.size > 1024 * 1024){
                 alert("File size must be less than 1MB");
                 return;
             }
 
             showPreview(file);
 
-        } catch(err){
-            console.log("User cancelled or error:", err);
+        } catch(err) {
+            console.log("User cancelled or API error, fallback:", err);
+            document.getElementById("photo").click();
         }
     } else {
-        // Device/browser does not support modern picker
-        alert("Your device or browser does not support modern photo picker.");
+        // Fallback for old devices
+        document.getElementById("photo").click();
     }
 }
 
-// Image Preview
+// Fallback input listener
+document.getElementById("photo").addEventListener("change", function(){
+    const file = this.files[0];
+    if(file.size > 1024 * 1024){
+        alert("File size must be less than 1MB");
+        this.value = "";
+    } else {
+        showPreview(file);
+    }
+});
+
+// Show image preview
 function showPreview(file){
     const preview = document.getElementById("preview");
     const reader = new FileReader();
@@ -119,9 +135,6 @@ function showPreview(file){
     }
     reader.readAsDataURL(file);
 }
-
-// Button click
-document.getElementById("uploadBtn").addEventListener("click", openPicker);
 </script>
 
 </body>
