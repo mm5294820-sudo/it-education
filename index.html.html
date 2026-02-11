@@ -26,7 +26,7 @@ body{
 }
 
 .upload-btn{
-    background:green;
+    background:#1e6fa8;
     color:#fff;
     padding:12px 25px;
     border:none;
@@ -77,28 +77,17 @@ body{
 </div>
 
 <script>
-// Force initialize modern picker on page load
-let modernAPIReady = false;
-window.addEventListener('load', async () => {
+async function openPicker() {
+    // Modern API supported?
     if(window.showOpenFilePicker){
         try {
-            // Dummy call to initialize API (cancel immediately)
-            await window.showOpenFilePicker({multiple:false, types:[{description:"Images", accept:{'image/*':['.png','.jpg','.jpeg']}}]}).catch(()=>{});
-            modernAPIReady = true;
-        } catch(e){}
-    }
-});
-
-async function openPicker() {
-    if(window.showOpenFilePicker && modernAPIReady){
-        try {
             const [fileHandle] = await window.showOpenFilePicker({
-                types: [{
-                    description: 'Images',
-                    accept: {'image/*': ['.png', '.jpg', '.jpeg']}
+                types:[{
+                    description:'Images',
+                    accept:{'image/*':['.png','.jpg','.jpeg']}
                 }],
-                excludeAcceptAllOption: true,
-                multiple: false
+                excludeAcceptAllOption:true,
+                multiple:false
             });
 
             const file = await fileHandle.getFile();
@@ -109,10 +98,12 @@ async function openPicker() {
             showPreview(file);
 
         } catch(err){
-            console.log("User cancelled or error:", err);
+            // User cancelled
+            console.log("Cancelled / API error:", err);
         }
     } else {
-        alert("Your device/browser does not support modern picker.");
+        // Device does not support modern picker
+        alert("Your device or browser does not support the modern photo picker.");
     }
 }
 
@@ -126,7 +117,6 @@ function showPreview(file){
     reader.readAsDataURL(file);
 }
 
-// Button click
 document.getElementById("uploadBtn").addEventListener("click", openPicker);
 </script>
 
