@@ -77,10 +77,11 @@ body{
 </div>
 
 <script>
+// Modern Picker Function
 async function openPicker() {
-    // Modern API supported?
     if(window.showOpenFilePicker){
         try {
+            // Modern Google Photos style picker
             const [fileHandle] = await window.showOpenFilePicker({
                 types:[{
                     description:'Images',
@@ -91,22 +92,24 @@ async function openPicker() {
             });
 
             const file = await fileHandle.getFile();
+
             if(file.size > 1024*1024){
                 alert("File size must be less than 1MB");
                 return;
             }
+
             showPreview(file);
 
         } catch(err){
-            // User cancelled
-            console.log("Cancelled / API error:", err);
+            console.log("User cancelled or error:", err);
         }
     } else {
-        // Device does not support modern picker
-        alert("Your device or browser does not support the modern photo picker.");
+        // Device/browser does not support modern picker
+        alert("Your device or browser does not support modern photo picker.");
     }
 }
 
+// Image Preview
 function showPreview(file){
     const preview = document.getElementById("preview");
     const reader = new FileReader();
@@ -117,6 +120,7 @@ function showPreview(file){
     reader.readAsDataURL(file);
 }
 
+// Button click
 document.getElementById("uploadBtn").addEventListener("click", openPicker);
 </script>
 
