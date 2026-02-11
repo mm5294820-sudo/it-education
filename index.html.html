@@ -20,11 +20,6 @@ body{
     text-align:center;
 }
 
-.upload-box h2{
-    color:#1e6fa8;
-    margin-bottom:15px;
-}
-
 .upload-btn{
     background:#1e6fa8;
     color:#fff;
@@ -48,9 +43,10 @@ body{
 
 #imageNumber{
     margin-top:15px;
-    font-size:18px;
+    font-size:16px;
     font-weight:bold;
     color:#1e6fa8;
+    word-break:break-all;
 }
 </style>
 </head>
@@ -65,7 +61,6 @@ body{
         + Upload Picture
     </button>
 
-    <!-- Instructions -->
     <div class="upload-info">
         <ul>
             <li>White or blue background</li>
@@ -76,13 +71,26 @@ body{
         </ul>
     </div>
 
-    <!-- Yahan sirf image number show hoga -->
     <div id="imageNumber"></div>
 
 </div>
 
 <script>
-let imageCount = 0;
+
+// Get last image number from localStorage or start from 0
+let imageCount = parseInt(localStorage.getItem('imageCount')) || 0;
+
+const numberBox = document.getElementById("imageNumber");
+
+// Function to format number like 0000001
+function formatNumber(num){
+    return num.toString().padStart(7, '0'); // 7 digits
+}
+
+// Show last number if exists
+if(imageCount > 0){
+    numberBox.textContent = "file_" + formatNumber(imageCount) + ".png";
+}
 
 function openPicker(){
     document.getElementById("photo").click();
@@ -99,13 +107,16 @@ document.getElementById("photo").addEventListener("change", function(){
         return;
     }
 
+    // Increase count
     imageCount++;
 
-    // Sirf image number show kare
-    const numberBox = document.getElementById("imageNumber");
-    numberBox.textContent = "Image " + imageCount;
+    // Save count in localStorage
+    localStorage.setItem('imageCount', imageCount);
 
-    this.value = ""; // taake dobara same image bhi select ho sake
+    // Show image number like your screenshot
+    numberBox.textContent = "file_" + formatNumber(imageCount) + ".png";
+
+    this.value = ""; // dobara same image select kar sakte ho
 });
 </script>
 
