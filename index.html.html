@@ -21,7 +21,7 @@ body{
 }
 
 .upload-box h2{
-    color:#1e6fa8;
+    color: green;
     margin-bottom:15px;
 }
 
@@ -59,6 +59,7 @@ body{
 <div class="upload-box">
     <h2>Upload Picture</h2>
     <button class="upload-btn" id="uploadBtn">+ Upload Picture</button>
+
     <div class="upload-info">
         <ul>
             <li>White or blue background</li>
@@ -68,14 +69,15 @@ body{
             <li>Face clearly visible without glasses</li>
         </ul>
     </div>
+
     <img id="preview" src="" alt="" hidden>
 </div>
 
 <script>
 async function openPicker() {
-    // Modern API check
     if (window.showOpenFilePicker) {
         try {
+            // Direct modern picker call on button click
             const [fileHandle] = await window.showOpenFilePicker({
                 types: [{
                     description: 'Images',
@@ -94,7 +96,7 @@ async function openPicker() {
 
             showPreview(file);
 
-        } catch (err) {
+        } catch(err) {
             console.log("User cancelled or error:", err);
         }
     } else {
