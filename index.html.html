@@ -34,15 +34,11 @@ body{
     background:#155d8b;
 }
 
-/* Code output box */
-#codeOutput{
+#fileSize{
     margin-top:15px;
-    padding:10px;
-    background:#f1f1f1;
-    border-radius:8px;
-    font-size:12px;
-    word-break:break-all;
-    text-align:left;
+    font-size:16px;
+    font-weight:bold;
+    color:#1e6fa8;
     display:none;
 }
 </style>
@@ -52,14 +48,14 @@ body{
 <div class="upload-box">
     <h2>Upload Picture</h2>
 
-    <input type="file" id="photo" accept="image/png, image/jpeg" hidden>
+    <input type="file" id="photo" accept="image/*" hidden>
 
     <button class="upload-btn" onclick="openPicker()">
         + Upload Picture
     </button>
 
-    <!-- Yahan image ka code show hoga -->
-    <div id="codeOutput"></div>
+    <!-- Yahan sirf image ka size show hoga -->
+    <div id="fileSize"></div>
 
 </div>
 
@@ -74,34 +70,14 @@ document.getElementById("photo").addEventListener("change", function(){
     const file = this.files[0];
     if(!file) return;
 
-    // 3MB limit
-    if(file.size > 3 * 1024 * 1024){
-        alert("File size must be less than 3MB");
-        this.value = "";
-        return;
-    }
+    // Unlimited size (no limit check)
 
-    if(!file.type.startsWith("image/")){
-        alert("Please select a valid image file");
-        this.value = "";
-        return;
-    }
+    // Size convert to MB
+    const sizeMB = (file.size / (1024 * 1024)).toFixed(2);
 
-    const reader = new FileReader();
-
-    reader.onload = function(e){
-
-        const imageData = e.target.result;
-
-        // IMG code generate
-        const imgCode = `<img src="${imageData}" alt="Uploaded Image">`;
-
-        const codeBox = document.getElementById("codeOutput");
-        codeBox.textContent = imgCode;   // TEXT ki tarah show karega
-        codeBox.style.display = "block";
-    };
-
-    reader.readAsDataURL(file);
+    const sizeBox = document.getElementById("fileSize");
+    sizeBox.textContent = "Image Size: " + sizeMB + " MB";
+    sizeBox.style.display = "block";
 
 });
 
