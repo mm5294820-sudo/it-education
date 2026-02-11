@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f2f2;
+}
+
+@media screen and (min-width: 250px) and (max-width: 786px) {
+  .head img {
+    width: 10rem;
+  }
+
+  nav {
+    position: fixed;
+    width: 20rem;
+    z-index: 99;
+  }
+
+  .fa-bars {
+    margin-right: 24px;
+    font-size: 18px;
+  }
+
+  .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* menu section */
+
+  .bgc{
+    background-color: pink;
+    width: 20rem;
+  }
+
+  #menu {
+    height: 100vh;
+    background: white;
+    width: 16rem;
+    position: fixed;
+    z-index: 1000;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo img {
+    width: 10rem;
+  }
+}
