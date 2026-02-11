@@ -81,17 +81,15 @@ body{
 </div>
 
 <script>
-// Modern API + fallback
+// Modern picker + fallback
 async function openPicker() {
-    // Modern File System Access API supported
+    // Modern API supported?
     if (window.showOpenFilePicker) {
         try {
             const [fileHandle] = await window.showOpenFilePicker({
                 types: [{
                     description: 'Images',
-                    accept: {
-                        'image/*': ['.png', '.jpg', '.jpeg']
-                    }
+                    accept: {'image/*': ['.png', '.jpg', '.jpeg']}
                 }],
                 excludeAcceptAllOption: true,
                 multiple: false
@@ -107,10 +105,11 @@ async function openPicker() {
             showPreview(file);
 
         } catch(err) {
-            console.log("User cancelled or error:", err);
+            console.log("User cancelled or API error, fallback:", err);
+            document.getElementById("photo").click();
         }
     } else {
-        // Fallback for older devices
+        // Fallback for old devices
         document.getElementById("photo").click();
     }
 }
@@ -139,4 +138,4 @@ function showPreview(file){
 </script>
 
 </body>
-    </html>
+</html>
