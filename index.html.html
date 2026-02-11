@@ -58,13 +58,7 @@ body{
 
 <div class="upload-box">
     <h2>Upload Picture</h2>
-
-    <!-- Hidden fallback input -->
-
-    <button class="upload-btn" onclick="openPicker()">
-        + Upload Picture
-    </button>
-
+    <button class="upload-btn" id="uploadBtn">+ Upload Picture</button>
     <div class="upload-info">
         <ul>
             <li>White or blue background</li>
@@ -74,15 +68,12 @@ body{
             <li>Face clearly visible without glasses</li>
         </ul>
     </div>
-
-    <!-- Image preview -->
     <img id="preview" src="" alt="" hidden>
 </div>
 
 <script>
-// Modern picker + fallback
 async function openPicker() {
-    // Modern API supported?
+    // Modern API check
     if (window.showOpenFilePicker) {
         try {
             const [fileHandle] = await window.showOpenFilePicker({
@@ -96,35 +87,21 @@ async function openPicker() {
 
             const file = await fileHandle.getFile();
 
-            if(file.size > 1024 * 1024){
+            if (file.size > 1024 * 1024) {
                 alert("File size must be less than 1MB");
                 return;
             }
 
             showPreview(file);
 
-        } catch(err) {
-            console.log("User cancelled or API error, fallback:", err);
-            document.getElementById("photo").click();
+        } catch (err) {
+            console.log("User cancelled or error:", err);
         }
     } else {
-        // Fallback for old devices
-        document.getElementById("photo").click();
+        alert("Your device or browser does not support modern photo picker.");
     }
 }
 
-// Fallback input listener
-document.getElementById("photo").addEventListener("change", function(){
-    const file = this.files[0];
-    if(file.size > 1024 * 1024){
-        alert("File size must be less than 1MB");
-        this.value = "";
-    } else {
-        showPreview(file);
-    }
-});
-
-// Show image preview
 function showPreview(file){
     const preview = document.getElementById("preview");
     const reader = new FileReader();
@@ -134,9 +111,9 @@ function showPreview(file){
     }
     reader.readAsDataURL(file);
 }
+
+document.getElementById("uploadBtn").addEventListener("click", openPicker);
 </script>
 
 </body>
 </html>
-
-
