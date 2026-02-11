@@ -20,11 +20,6 @@ body{
     text-align:center;
 }
 
-.upload-box h2{
-    color:#1e6fa8;
-    margin-bottom:15px;
-}
-
 .upload-btn{
     background:#1e6fa8;
     color:#fff;
@@ -46,14 +41,15 @@ body{
     text-align:left;
 }
 
-#fileInfo{
+#imageInfo{
     margin-top:15px;
     padding:12px;
     background:#eef6ff;
     border-radius:8px;
     font-size:15px;
-    color:#1e6fa8;
     font-weight:bold;
+    color:#1e6fa8;
+    word-break:break-all;
     display:none;
 }
 </style>
@@ -63,8 +59,7 @@ body{
 <div class="upload-box">
     <h2>Upload Picture</h2>
 
-    <!-- Hidden fallback input -->
-    <input type="file" id="photo" accept="image/png, image/jpeg" hidden>
+    <input type="file" id="photo" accept="image/*" hidden>
 
     <button class="upload-btn" onclick="openPicker()">
         + Upload Picture
@@ -73,67 +68,50 @@ body{
     <div class="upload-info">
         <ul>
             <li>White or blue background</li>
-            <li>File size less than 1MB</li>
+            <li>No file size limit</li>
             <li>File type: jpg, jpeg, png</li>
             <li>Recent passport size picture</li>
             <li>Face clearly visible without glasses</li>
         </ul>
     </div>
 
-    <!-- Number / info preview -->
-    <div id="fileInfo"></div>
+    <!-- Name + Size preview -->
+    <div id="imageInfo"></div>
+
 </div>
 
 <script>
-async function openPicker() {
-    if (window.showOpenFilePicker) {
-        try {
-            const [fileHandle] = await window.showOpenFilePicker({
-                types: [{
-                    description: 'Images',
-                    accept: {'image/*': ['.png', '.jpg', '.jpeg']}
-                }],
-                multiple: false
-            });
-
-            const file = await fileHandle.getFile();
-            validateFile(file);
-
-        } catch (err) {
-            document.getElementById("photo").click();
-        }
-    } else {
-        document.getElementById("photo").click();
-    }
+function openPicker(){
+    document.getElementById("photo").click();
 }
 
 document.getElementById("photo").addEventListener("change", function(){
-    const file = this.files[0];
-    validateFile(file);
-});
 
-function validateFile(file){
+    const file = this.files[0];
     if(!file) return;
 
-    if(file.size > 1024 * 1024){
-        alert("File size must be less than 1MB");
+    if(!file.type.startsWith("image/")){
+        alert("Please select a valid image file");
+        this.value = "";
         return;
     }
 
-    showNumber(file);
-}
+    const sizeKB = (file.size / 1024).toFixed(2);
+    const sizeText = sizeKB > 1024 
+        ? (sizeKB / 1024).toFixed(2) + " MB"
+        : sizeKB + " KB";
 
-function showNumber(file){
-    const fileInfo = document.getElementById("fileInfo");
-    const sizeKB = (file.size / 1024).toFixed(1);
+    const imageInfo = document.getElementById("imageInfo");
 
-    fileInfo.innerHTML = `
-        Selected File No: <b>1</b><br>
+    imageInfo.innerHTML = `
         File Name: ${file.name}<br>
-        Size: ${sizeKB} KB
+        File Size: ${sizeText}
     `;
-    fileInfo.style.display = "block";
-}
+
+    imageInfo.style.display = "block";
+
+    this.value = ""; // same image dobara select ho sake
+});
 </script>
 
 </body>
