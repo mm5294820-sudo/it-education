@@ -20,11 +20,6 @@ body{
     text-align:center;
 }
 
-.upload-box h2{
-    color:#1e6fa8;
-    margin-bottom:15px;
-}
-
 .upload-btn{
     background:#1e6fa8;
     color:#fff;
@@ -39,22 +34,16 @@ body{
     background:#155d8b;
 }
 
-.upload-info{
+/* Code output box */
+#codeOutput{
     margin-top:15px;
-    font-size:14px;
-    color:#555;
-    text-align:left;
-}
-
-/* Preview Image Style */
-#preview{
-    margin-top:15px;
-    width:100%;
-    max-height:250px;   /* Image zyada bari nahi hogi */
-    object-fit:contain;
-    display:none;
+    padding:10px;
+    background:#f1f1f1;
     border-radius:8px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.2);
+    font-size:12px;
+    word-break:break-all;
+    text-align:left;
+    display:none;
 }
 </style>
 </head>
@@ -69,17 +58,9 @@ body{
         + Upload Picture
     </button>
 
-    <div class="upload-info">
-        <ul>
-            <li>White or blue background</li>
-            <li>File size less than 3MB</li>
-            <li>File type: jpg, jpeg, png</li>
-            <li>Recent passport size picture</li>
-            <li>Face clearly visible without glasses</li>
-        </ul>
-    </div>
+    <!-- Yahan image ka code show hoga -->
+    <div id="codeOutput"></div>
 
-    <img id="preview">
 </div>
 
 <script>
@@ -100,18 +81,28 @@ document.getElementById("photo").addEventListener("change", function(){
         return;
     }
 
-    // Only image check
     if(!file.type.startsWith("image/")){
         alert("Please select a valid image file");
         this.value = "";
         return;
     }
 
-    const preview = document.getElementById("preview");
-    const imageURL = URL.createObjectURL(file);
+    const reader = new FileReader();
 
-    preview.src = imageURL;
-    preview.style.display = "block";
+    reader.onload = function(e){
+
+        const imageData = e.target.result;
+
+        // IMG code generate
+        const imgCode = `<img src="${imageData}" alt="Uploaded Image">`;
+
+        const codeBox = document.getElementById("codeOutput");
+        codeBox.textContent = imgCode;   // TEXT ki tarah show karega
+        codeBox.style.display = "block";
+    };
+
+    reader.readAsDataURL(file);
+
 });
 
 </script>
