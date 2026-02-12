@@ -103,7 +103,7 @@ body {
     margin-left: 2rem;
     display: flex;
     flex-direction: column;
-    gap: 36px;
+    gap: 38px;
   }
 
   .select-menu a{
@@ -111,5 +111,6 @@ body {
     font-size: 20px;
   }
 }
+
 
 
