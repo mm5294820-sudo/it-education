@@ -105,4 +105,9 @@ body {
     flex-direction: column;
     gap: 30px;
   }
+
+  .select-menu a{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+  }
 }
