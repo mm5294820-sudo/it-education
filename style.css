@@ -116,7 +116,6 @@ body {
 
   .course-item{
     width: 14rem;
-    height: 27rem;
     height: 0;
     border-radius: .5rem;
     background-color: rgba(211, 208, 208, 0.24);
@@ -129,7 +128,7 @@ body {
 
   .course-items-active{
     visibility: visible;
-    height: 27rem;
+    height: 30rem;
     opacity: 1;
     overflow-y: scroll;
   }
@@ -146,6 +145,7 @@ body {
   }
 
   .select-menu {
+    margin-top: 1rem;
     margin-left: 2rem;
     display: flex;
     flex-direction: column;
