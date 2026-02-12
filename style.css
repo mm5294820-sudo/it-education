@@ -173,11 +173,12 @@ body {
     border-radius: 12px;
     cursor: pointer;
     width: 13rem;
-    margin-bottom: 3rem;
+    margin-bottom: 7rem;
   }
 
   .but button:hover {
     opacity: 0.9;
   }
 }
+
 
