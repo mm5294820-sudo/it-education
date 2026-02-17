@@ -52,7 +52,6 @@ body {
     display: flex;
     gap: 5px;
     align-items: center;
-    margin-left: 2rem;
   }
 
   .head-one i {
@@ -67,7 +66,6 @@ body {
     font-family: Arial, sans-serif;
     color: white;
     align-items: center;
-    margin-left: 2rem;
     margin-top: 1rem;
   }
 
@@ -225,4 +223,3 @@ body {
     opacity: 0.9;
   }
 }
-
