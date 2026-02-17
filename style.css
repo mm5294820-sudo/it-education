@@ -62,21 +62,60 @@ body {
     font-size: 10px;
   }
 
-  .head-second{
+  .head-second {
     font-family: Arial, sans-serif;
     color: white;
     align-items: center;
     margin-top: 1rem;
   }
 
-  .head-second h1{
+  .head-second h1 {
     font-size: 24px;
   }
 
-  .head-second h2{
+  .head-second h2 {
     font-size: 14px;
     padding-top: 0.5rem;
     font-weight: 200;
+  }
+
+  #part-sec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .part-sec {
+    height: 11rem;
+    background-color: #fff;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    gap: 15px;
+  }
+
+  .btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    gap: 3px;
+    border: 2px solid #0f6db5;
+    width: 90%;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+  }
+
+  .btn i{
+    font-size: 12px;
+  }
+
+  .btn h3{
+    font-size: 1rem;
   }
 
   /* menu section */
