@@ -6,21 +6,17 @@
 
 body {
   background-color: #f5f2f2;
+  padding-top: 4rem;
 }
 
 @media screen and (min-width: 250px) and (max-width: 786px) {
   .head img {
-    width: 10rem;
+    width: 8rem;
   }
 
-  nav {
-    position: fixed;
-    width: 20rem;
-    z-index: 99;
-  }
-
-  .fa-bars {
-    margin-right: 10px;
+  .fa-bars,
+  .close-mark {
+    margin-right: 11px;
     font-size: 18px;
     cursor: pointer;
   }
@@ -33,8 +29,56 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 5rem;
-    width: 20rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4rem;
+    background-color: #f5f2f2;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+  }
+
+  /* section 1 */
+
+  .part-1 {
+    background: linear-gradient(90deg, #0f6db5, #7cc242);
+    height: 10rem;
+  }
+
+  .head-one {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    margin-left: 2rem;
+    padding-top: 1rem;
+  }
+
+  .head-one i {
+    font-size: 9px;
+  }
+
+  .head-one h3 {
+    font-size: 10px;
+  }
+
+  .head-second{
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    gap: 5px;
+    align-items: center;
+    margin-left: 2rem;
+    margin-top: 0.5rem;
+  }
+
+  .head-second h1{
+    font-size: 30px;
+  }
+
+  .head-second h2{
+    font-size: 15px;
   }
 
   /* menu section */
@@ -49,7 +93,7 @@ body {
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
     transform: translateX(-110%);
     transition: transform 0.3s ease-in-out;
-    z-index: 1000;
+    z-index: 2000;
   }
 
   .menu-active {
@@ -76,13 +120,13 @@ body {
   .fa-xmark {
     margin-right: 15px;
     font-size: 19px;
-    cursor: pointer;
   }
 
-  .menuss{
+  .menuss {
     margin-top: 4.5rem;
     height: 89vh;
     overflow-y: scroll;
+    scrollbar-width: thin;
   }
 
   body.blur-active::after {
@@ -93,7 +137,7 @@ body {
     width: 100%;
     height: 100%;
     backdrop-filter: blur(10px);
-    z-index: 999;
+    z-index: 1500;
   }
 
   a {
@@ -102,37 +146,39 @@ body {
   }
 
   .fa-angle-down,
-  .fa-angle-up{
+  .fa-angle-up {
     font-size: 1rem;
     margin-right: 2rem;
   }
 
-  .courses{
+  .courses {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: row
+    flex-direction: row;
   }
 
-  .course-item{
+  .course-item {
     width: 14rem;
     height: 0;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     background-color: rgba(211, 208, 208, 0.24);
     overflow-y: scroll;
     visibility: hidden;
     overflow: hidden;
     opacity: 0;
-    transition: height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    transition:
+      height 0.4s ease-in-out,
+      opacity 0.4s ease-in-out;
   }
 
-  .course-items-active{
+  .course-items-active {
     visibility: visible;
     height: 30rem;
     opacity: 1;
     overflow-y: scroll;
   }
-  
+
   .lines {
     display: flex;
     justify-content: center;
@@ -171,7 +217,6 @@ body {
     height: 3rem;
     font-size: 18px;
     border-radius: 12px;
-    cursor: pointer;
     width: 13rem;
     margin-bottom: 7rem;
   }
@@ -180,5 +225,3 @@ body {
     opacity: 0.9;
   }
 }
-
-
