@@ -73,7 +73,7 @@ body {
     font-size: 28px;
   }
 
-  .head-second h2 {
+  .head-second p {
     font-size: 19px;
     padding-top: 0.5rem;
     font-weight: 100;
@@ -86,7 +86,7 @@ body {
   }
 
   .part-sec {
-    height: 11rem;
+    height: 12rem;
     background-color: #fff;
     width: 95%;
     display: flex;
@@ -106,7 +106,7 @@ body {
     gap: 3px;
     border: 2px solid #0f6db5;
     width: 90%;
-    height: 2.5rem;
+    height: 2.78rem;
     border-radius: 0.5rem;
   }
 
@@ -261,4 +261,81 @@ body {
   .but button:hover {
     opacity: 0.9;
   }
+}
+
+/* id card */
+
+/* section 2 */
+
+.id-heading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 1.5rem;
+  gap: 5px;
+}
+
+.id-heading h2{
+  font-size: 1.8rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.id-heading p {
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 0 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cnin-no{
+  margin-left: 1rem;
+  margin-top: 2rem;
+}
+
+.input{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input span{
+  color: #0f6db5;
+}
+
+.input h3{
+  font-size: 1rem;
+  font-family: 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.input input{
+  width: 90%;
+  height: 2.6rem;
+  border-radius: 0.5rem;
+  border: 2px solid #636262;
+  background-color: transparent;
+  font-size: 1rem;
+  padding-left: 1rem;
+}
+
+.input input:focus{
+  outline: none;
+  border-color: #0f6db5;
+}
+
+.but-search{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.but-search button{
+  height: 2.5rem;
+  width: 77%;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #0f6db5;
+  color: white;
+  margin-bottom: 5rem;
 }
