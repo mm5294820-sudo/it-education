@@ -88,7 +88,7 @@ body {
   .part-sec {
     height: 11rem;
     background-color: #fff;
-    width: 80%;
+    width: 91%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -262,3 +262,4 @@ body {
     opacity: 0.9;
   }
 }
+
