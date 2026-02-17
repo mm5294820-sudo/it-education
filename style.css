@@ -316,6 +316,9 @@ body {
   background-color: transparent;
   font-size: 1rem;
   padding-left: 1rem;
+   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .input input:focus{
@@ -339,4 +342,5 @@ body {
   color: white;
   margin-bottom: 5rem;
 }
+
 
