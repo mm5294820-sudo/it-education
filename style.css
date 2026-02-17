@@ -65,20 +65,23 @@ body {
   }
 
   .head-second{
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Arial, sans-serif;
     color: white;
-    gap: 5px;
     align-items: center;
     margin-left: 2rem;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
   }
 
   .head-second h1{
-    font-size: 30px;
+    font-size: 26px;
+    font-weight: 600;
+    
   }
 
   .head-second h2{
     font-size: 15px;
+    font-weight: lighter;
+    padding-top: 0.5rem;
   }
 
   /* menu section */
