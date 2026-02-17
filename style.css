@@ -43,7 +43,7 @@ body {
 
   .part-1 {
     background: linear-gradient(90deg, #0f6db5, #7cc242);
-    height: 10rem;
+    padding: 1.5rem 1.5rem;
   }
 
   .head-one {
@@ -53,7 +53,6 @@ body {
     gap: 5px;
     align-items: center;
     margin-left: 2rem;
-    padding-top: 1rem;
   }
 
   .head-one i {
@@ -73,14 +72,11 @@ body {
   }
 
   .head-second h1{
-    font-size: 26px;
-    font-weight: 600;
-    
+    font-size: 24px;
   }
 
   .head-second h2{
-    font-size: 15px;
-    font-weight: lighter;
+    font-size: 14px;
     padding-top: 0.5rem;
   }
 
