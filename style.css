@@ -70,13 +70,13 @@ body {
   }
 
   .head-second h1 {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   .head-second h2 {
-    font-size: 14px;
+    font-size: 19px;
     padding-top: 0.5rem;
-    font-weight: 200;
+    font-weight: 100;
   }
 
   #part-sec {
@@ -262,5 +262,3 @@ body {
     opacity: 0.9;
   }
 }
-
-
