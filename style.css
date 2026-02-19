@@ -74,7 +74,7 @@ body {
   }
 
   .head-second p {
-    font-size: 19px;
+    font-size: 18px;
     padding-top: 0.5rem;
     font-weight: 100;
   }
@@ -98,7 +98,7 @@ body {
     gap: 15px;
   }
 
-  .btn{
+  .btn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -110,11 +110,11 @@ body {
     border-radius: 0.5rem;
   }
 
-  .btn i{
+  .btn i {
     font-size: 12px;
   }
 
-  .btn h3{
+  .btn h3 {
     font-size: 1rem;
   }
 
@@ -267,7 +267,7 @@ body {
 
 /* section 2 */
 
-.id-heading{
+.id-heading {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -276,39 +276,44 @@ body {
   gap: 5px;
 }
 
-.id-heading h2{
+.id-heading h2 {
   font-size: 1.8rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .id-heading p {
   font-size: 1.1rem;
   text-align: center;
   padding: 0 1rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.cnin-no{
+.cnin-no {
   margin-left: 1rem;
   margin-top: 2rem;
 }
 
-.input{
+.input {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 8px;
 }
 
-.input span{
+.input span {
   color: #0f6db5;
 }
 
-.input h3{
+.input h3 {
   font-size: 1rem;
-  font-family: 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family:
+    "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva,
+    Verdana, sans-serif;
+  width: 90%;
+  text-align: left;
 }
 
-.input input{
+.input input {
   width: 90%;
   height: 2.6rem;
   border-radius: 0.5rem;
@@ -316,23 +321,20 @@ body {
   background-color: transparent;
   font-size: 1rem;
   padding-left: 1rem;
-   display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.input input:focus{
+.input input:focus {
   outline: none;
   border-color: #0f6db5;
 }
 
-.but-search{
+.but-search {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.but-search button{
+.but-search button {
   height: 2.5rem;
   width: 77%;
   margin-top: 1rem;
@@ -343,4 +345,60 @@ body {
   margin-bottom: 5rem;
 }
 
+/* result */
+/* section 2 */
 
+.heid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+  gap: 5px;
+  font-size: 2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.course {
+  margin-left: 1rem;
+  margin-top: 2rem;
+}
+
+.select {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2rem;
+}
+
+.select-21{
+  margin-bottom: 4rem;
+}
+
+.blue {
+  color: #0f6db5;
+}
+
+.select h3 {
+  font-size: 1rem;
+  font-family:
+    "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva,
+    Verdana, sans-serif;
+  width: 90%;
+  text-align: left;
+}
+
+.select select {
+  width: 90%;
+  height: 2.6rem;
+  border-radius: 0.5rem;
+  border: 2px solid #636262;
+  background-color: transparent;
+  font-size: 1.3rem;
+  padding-left: 1rem;
+}
+
+.select select:focus {
+  outline: none;
+  border-color: #0f6db5;
+}
