@@ -217,8 +217,37 @@ if (countrySelect && citySelect && genderSelect) {
           option.text = campus;
           campusSelect.appendChild(option);
         });
-        campusSelect.disabled = true;
+        campusSelect.disabled = false;
       }
     });
   }
+}
+
+
+const inputs = document.querySelectorAll('.otp input');
+
+function handleKey(e, index){
+    // sirf numbers allow
+    if (!/[0-9]/.test(e.key) && e.key !== "Backspace" && e.key !== "Tab") {
+        e.preventDefault();
+        return;
+    }
+
+    // agar already number hai to dusra allow nahi
+    if (/[0-9]/.test(e.key) && inputs[index].value !== "") {
+        e.preventDefault();
+        return;
+    }
+
+    // backspace par peeche focus
+    if (e.key === "Backspace" && inputs[index].value === "" && index > 0) {
+        inputs[index - 1].focus();
+    }
+
+    // next box par auto focus
+    setTimeout(() => {
+        if (inputs[index].value && index < inputs.length - 1) {
+            inputs[index + 1].focus();
+        }
+    }, 10);
 }
