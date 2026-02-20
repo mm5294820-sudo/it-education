@@ -345,7 +345,7 @@ body {
   margin-bottom: 5rem;
 }
 
-/* result */
+/* registration */
 /* section 2 */
 
 .heid {
@@ -399,7 +399,7 @@ body {
   border-color: #0f6db5;
 }
 
-.btn-sub{
+.btn-sub {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -407,7 +407,7 @@ body {
   margin-bottom: 4rem;
 }
 
-.btn-sub button{
+.btn-sub button {
   height: 2.5rem;
   width: 40%;
   font-size: 1rem;
@@ -417,6 +417,53 @@ body {
   color: white;
 }
 
-.btn-sub button:hover{
+.btn-sub button:hover {
   background-color: #287fc2;
+}
+
+/* result */
+/* section 3 */
+
+.otp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.result {
+  font-size: 1rem;
+  font-family:
+    "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva,
+    Verdana, sans-serif;
+  width: 90%;
+  text-align: left;
+  margin-left: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.otp input {
+  width: 50px;
+  height: 55px;
+  font-size: 24px;
+  text-align: center;
+  border: 2px solid #000;
+  border-radius: 6px;
+  background-color: transparent;
+}
+
+.otp input:focus {
+  border: 2px solid #0f6db5;
+  outline: none;
+}
+
+.otp input::-webkit-outer-spin-button,
+.otp input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.otp input[type="number"] {
+  -moz-appearance: textfield;
 }
