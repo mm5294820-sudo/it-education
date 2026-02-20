@@ -11,7 +11,7 @@
 </head>
 
 <style>
-    .btn-3{
+    .btn-3 {
         background-color: #0f6db5;
         color: white;
     }
@@ -48,7 +48,7 @@
                 </div>
 
                 <a href="#">Campus</a>
-                <a href="#">Check Result</a>
+                <a href="result.html">Check Result</a>
 
             </div>
 
@@ -61,6 +61,7 @@
             </div>
         </div>
     </div>
+
 
     <section>
 
@@ -96,9 +97,33 @@
 
     </section>
 
+    <section>
+
+        <div class="id-heading">
+            <h2>Check Your Result</h2>
+            <p>Enter your roll number to view your results</p>
+        </div>
+
+        <h3 class="result">Roll Number <span class="blue">*</span></h3>
+
+        <div class="otp">
+            <input type="number" inputmode="numeric" maxlength="1" onkeydown="handleKey(event,0)">
+            <input type="number" inputmode="numeric" maxlength="1" onkeydown="handleKey(event,1)">
+            <input type="number" inputmode="numeric" maxlength="1" onkeydown="handleKey(event,2)">
+            <input type="number" inputmode="numeric" maxlength="1" onkeydown="handleKey(event,3)">
+            <input type="number" inputmode="numeric" maxlength="1" onkeydown="handleKey(event,4)">
+        </div>
+
+        <div class="but-search">
+            <button>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                search
+            </button>
+        </div>
+    </section>
+
 </body>
 
 <script src="script.js"></script>
-
 
 </html>
