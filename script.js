@@ -109,6 +109,7 @@ const citySelect = document.getElementById("city");
 const genderSelect = document.getElementById("gender");
 const courseSelect = document.getElementById("course");
 const campusSelect = document.getElementById("campus");
+const subBtn = document.getElementById("sub-btn");
 
 if (countrySelect && citySelect && genderSelect) {
   for (let country in countryData) {
@@ -145,6 +146,9 @@ if (countrySelect && citySelect && genderSelect) {
       campusSelect.innerHTML = '<option value="">Select Campus</option>';
       campusSelect.disabled = true;
     }
+    if (subBtn) {
+      subBtn.disabled = true;
+    }
   });
 
   genderSelect.addEventListener("change", function () {
@@ -161,6 +165,9 @@ if (countrySelect && citySelect && genderSelect) {
     if (campusSelect) {
       campusSelect.innerHTML = '<option value="">Select Campus</option>';
       campusSelect.disabled = true;
+      if (subBtn) {
+        subBtn.disabled = true;
+      }
     }
 
     if (selectedGender && selectedCountry && countryData[selectedCountry]) {
@@ -197,6 +204,9 @@ if (countrySelect && citySelect && genderSelect) {
     if (campusSelect) {
       campusSelect.innerHTML = '<option value="">Select Campus</option>';
       campusSelect.disabled = true;
+      if (subBtn) {
+        subBtn.disabled = true;
+      }
     }
   });
 
@@ -208,6 +218,9 @@ if (countrySelect && citySelect && genderSelect) {
       // Course select hone par Campus populate aur enable karein
       campusSelect.innerHTML = '<option value="">Select Campus</option>';
       campusSelect.disabled = true;
+      if (subBtn) {
+        subBtn.disabled = true;
+      }
 
       if (selectedCourse && selectedCity && campusData[selectedCity]) {
         let campuses = campusData[selectedCity];
@@ -218,6 +231,16 @@ if (countrySelect && citySelect && genderSelect) {
           campusSelect.appendChild(option);
         });
         campusSelect.disabled = false;
+      }
+    });
+
+    campusSelect.addEventListener("change", function () {
+      if (subBtn) {
+        if (this.value) {
+          subBtn.disabled = false;
+        } else {
+          subBtn.disabled = true;
+        }
       }
     });
   }
@@ -250,4 +273,45 @@ function handleKey(e, index){
             inputs[index + 1].focus();
         }
     }, 10);
+}
+
+const detInputs = document.querySelectorAll(".det-input input");
+
+if (detInputs.length > 0 && subBtn) {
+  function validatePart2() {
+    let isValid = true;
+    detInputs.forEach((input) => {
+      const label = input.previousElementSibling;
+      if (label && label.querySelector(".red")) {
+        if (!input.value.trim()) {
+          isValid = false;
+        }
+      }
+    });
+    subBtn.disabled = !isValid;
+  }
+
+  detInputs.forEach((input) => {
+    input.addEventListener("input", validatePart2);
+    input.addEventListener("change", validatePart2);
+  });
+}
+
+const fatherCnicInput = document.getElementById("father-cnic-no");
+if (fatherCnicInput) {
+  fatherCnicInput.addEventListener("input", function (e) {
+    let input = e.target;
+    let value = input.value.replace(/\D/g, "").substring(0, 13);
+    let formattedValue = "";
+    if (value.length > 0) {
+      formattedValue = value.substring(0, 5);
+    }
+    if (value.length > 5) {
+      formattedValue += "-" + value.substring(5, 12);
+    }
+    if (value.length > 12) {
+      formattedValue += "-" + value.substring(12, 13);
+    }
+    input.value = formattedValue;
+  });
 }
