@@ -58,18 +58,70 @@
 
     <section>
 
-        <div class="part-1">
-            <div class="head-one">
-                <i class="fa-solid fa-graduation-cap"></i>
-                <i class="fa-solid fa-angle-right"></i>
-                <h3>Enroll Now</h3>
-            </div>
+            <div class="course">
 
-            <div class="head-second">
-                <h1>Registration Form</h1>
-                <p>Start your journey towards excellence. Fill out the form to apply for our courses</p>
+                <div class="heading">
+                    <i class="fa-regular fa-user"></i>
+                    <h1 class="heid">Personal Information</h1>
+                </div>
+
+                <div class="det-input">
+                    <h3>Full Name <span class="red">*</span></h3>
+                    <input type="text" placeholder="Enter Your Full Name">
+                </div>
+
+                <div class="det-input">
+                    <h3>Father Name <span class="red">*</span></h3>
+                    <input type="text" placeholder="Enter Your Father Name">
+                </div>
+
+                <div class="det-input">
+                    <h3>Email <span class="red">*</span></h3>
+                    <input type="email" placeholder="your.email@example.com">
+                </div>
+
+                <div class="det-input">
+                    <h3>Phone <span class="red">*</span></h3>
+                    <input type="number" placeholder="Enter Your Phone number">
+                </div>
+
+                <div class="det-input">
+                    <h3>ID Number <span class="red">*</span></h3>
+                    <input type="text" placeholder="Enter ID Number" id="cnic-no" maxlength="15" inputmode="numeric">
+                </div>
+
+                <div class="det-input">
+                    <h3>Father's ID Number <span class="op">(optional)</span></h3>
+                    <input type="text" placeholder="Enter ID Number" id="cnic-no" maxlength="15" inputmode="numeric">
+                </div>
+
+                <div class="det-input">
+                    <h3>Date of Birth <span class="red">*</span></h3>
+                    <input type="date" placeholder="Enter Your Phone number">
+                </div>
+
+                <div class="det-input">
+                    <h3>Address <span class="red">*</span></h3>
+                    <input type="text" placeholder="Enter Your Complete addres (minimum 10 characters)">
+                </div>
+
+                <div class="btns">
+
+                    <a href="index.html" class="back">
+                        <button id="back-btn" >
+                            Back
+                        </button>
+                    </a>
+
+                    <div class="sub">
+                        <button id="sub-btn" disabled onclick="window.location.href='registrationformpart3.html'">
+                            Submit
+                        </button>
+                    </div>
+
+                </div>
+
             </div>
-        </div>
 
     </section>
 </body>
