@@ -315,3 +315,46 @@ if (fatherCnicInput) {
     input.value = formattedValue;
   });
 }
+
+const compProficiencySelect = document.getElementById("Computer Proficiency");
+if (compProficiencySelect && subBtn) {
+  compProficiencySelect.addEventListener("change", function () {
+    if (this.value !== "Select Your Computer Proficiency") {
+      subBtn.disabled = false;
+    } else {
+      subBtn.disabled = true;
+    }
+  });
+}
+
+function openPicker(){
+    document.getElementById("photo").click();
+}
+
+document.getElementById("photo").addEventListener("change", function(){
+
+    const file = this.files[0];
+    if(!file) return;
+
+    if(!file.type.startsWith("image/")){
+        alert("Please select a valid image file");
+        this.value = "";
+        return;
+    }
+
+    const sizeKB = (file.size / 1024).toFixed(2);
+    const sizeText = sizeKB > 1024 
+        ? (sizeKB / 1024).toFixed(2) + " MB"
+        : sizeKB + " KB";
+
+    const imageInfo = document.getElementById("imageInfo");
+
+    imageInfo.innerHTML = `
+        File Name: ${file.name}<br>
+        File Size: ${sizeText}
+    `;
+
+    imageInfo.style.display = "block";
+
+    this.value = "";
+});
