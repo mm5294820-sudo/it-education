@@ -385,17 +385,18 @@ body {
 
 .select select {
   width: 90%;
-  height: 2.6rem;
-  border-radius: 0.5rem;
-  border: 2px solid #636262;
-  background-color: transparent;
-  font-size: 1.3rem;
-  padding-left: 1rem;
+  border: none;
+  border-bottom: 2px solid #3f3f3f;
+  outline: none;
+  background-color: #f5f2f2;
+  padding: 6px 0;
+  font-size: 18px;
+  padding-left: 0.5rem;
 }
 
 .select select:focus {
   outline: none;
-  border-color: #0f6db5;
+  border-bottom-color: #0f6db5;
 }
 
 .btn-sub {
@@ -423,7 +424,7 @@ body {
 /* Registratin 2 */
 /* section 1 */
 
-.heading{
+.heading {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -432,14 +433,14 @@ body {
   gap: 5px;
 }
 
-.heading i{
+.heading i {
   font-size: 0.8rem;
   text-align: center;
   margin-top: 1.5rem;
   color: #0f6db5;
 }
 
-.det-input h3{
+.det-input h3 {
   font-size: 1rem;
   font-family:
     "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva,
@@ -448,7 +449,7 @@ body {
   text-align: left;
 }
 
-.det-input{
+.det-input {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -456,7 +457,7 @@ body {
   margin-top: 2rem;
 }
 
-.det-input input{
+.det-input input {
   width: 90%;
   border: none;
   border-bottom: 2px solid #3f3f3f;
@@ -467,15 +468,15 @@ body {
   padding-left: 0.5rem;
 }
 
-.det-input input:focus{
+.det-input input:focus {
   border-bottom-color: #0f6db5;
 }
 
-.red{
+.red {
   color: red;
 }
 
-.op{
+.op {
   font-size: 0.7rem;
 }
 
@@ -489,7 +490,7 @@ body {
   -moz-appearance: textfield;
 }
 
-.btns{
+.btns {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -498,7 +499,7 @@ body {
 }
 
 .back,
-.sub{
+.sub {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -506,23 +507,20 @@ body {
 }
 
 #back-btn,
-#sub-btn{
+#sub-btn {
   height: 2.5rem;
   width: 50%;
   font-size: 1rem;
   color: white;
   background-color: #0f6db5;
   border: none;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
 
-
-
-
-
-
-
-
+#back-btn:hover,
+#sub-btn:hover {
+  background-color: #287fc2;
+}
 
 /* result */
 /* section 3 */
@@ -569,4 +567,87 @@ body {
 
 .otp input[type="number"] {
   -moz-appearance: textfield;
+}
+
+/* registration 3 */
+/*section 1 */
+
+.upload-box {
+  width: 90%;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 2px dashed #ccc;
+  border-radius: 12px;
+  background: #fff;
+  text-align: center;
+}
+
+.upload-btn {
+  background: #1e6fa8;
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 1rem;
+}
+
+.upload-btn:hover {
+  background: #155d8b;
+}
+
+.upload-info {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #555;
+  text-align: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#imageInfo {
+  margin-top: 15px;
+  padding: 12px;
+  background: #eef6ff;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #1e6fa8;
+  word-break: break-all;
+  display: none;
+}
+
+.trmess {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.trems {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 20%;
+  background-color: #dadada;
+  width: 75%;
+  gap: 1rem;
+  border-radius: .5rem;
+}
+
+.condition {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.condition p {
+  font-size: 1.1rem;
 }
