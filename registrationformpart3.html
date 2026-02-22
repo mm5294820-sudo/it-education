@@ -4,11 +4,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="assest/ChatGPT_Image_Feb_9__2026__01_04_36_PM-removebg-preview.png">
+    <title>FSI Registration form</title>
 </head>
 
 <body>
-    <h1>hi hello</h1>
+    <div class="head">
+        <img src="assest/ChatGPT_Image_Feb_9__2026__01_04_36_PM-removebg-preview.png" alt="">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <div class="menu">
+        <div class="logo">
+            <img src="assest/ChatGPT_Image_Feb_9__2026__01_04_36_PM-removebg-preview.png" alt="">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+
+        <div class="menuss">
+            <div class="select-menu">
+
+                <a href="#">Home</a>
+                <a href="#">About</a>
+
+                <div class="">
+                    <div class="courses">
+                        <a href="#">Courses</a>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+
+
+                    <div class="course-item">
+                        <h1>25252</h1>
+                    </div>
+                </div>
+
+                <a href="#">Campus</a>
+                <a href="result.html">Check Result</a>
+
+            </div>
+
+            <div class="lines">
+                <hr class="line-1">
+            </div>
+
+            <div class="but">
+                <a href="index.html"><button>Enroll Now</button></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- section 1 -->
+
+    <section>
+
+        <div class="course">
+
+            <div class="heading">
+                <h1 class="heid">Education & Technical Details</h1>
+            </div>
+
+            <div class="select">
+                <h3>Computer Proficiency <span class="red">*</span></h3>
+                <select name="Computer Proficiency" id="Computer Proficiency">
+                    <option value="Select Your Computer Proficiency">Select Your Computer Proficiency</option>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Advanced">Advanced</option>
+                    <option value="Expert">Expert</option>
+                </select>
+            </div>
+
+            <div class="select">
+                <h3>Last Qualification <span class="red">*</span></h3>
+                <select name="Last Qualification" id="Last Qualification">
+                    <option value="Last Qualification">Last Qualification</option>
+                    <option value="Matriculation">Matriculation</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Undergraduate">Undergraduate</option>
+                    <option value="Bachelor's Degree">Bachelor's Degree</option>
+                    <option value="Master's Degree">Master's Degree</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="select">
+                <h3>Where did you hear about us? <span class="red">*</span></h3>
+                <select name="Where did you hear about us?" id="Where did you hear about us?">
+                    <option value="Where did you hear about us?">Where did you hear about us?</option>
+                    <option value="Facebook">Facebook</option>
+                    <option value="Instagram">Instagram</option>
+                    <option value="YouTube">YouTube</option>
+                    <option value="Google Search">Google Search</option>
+                    <option value="WhatsApp">WhatsApp</option>
+                </select>
+            </div>
+
+            <div class="upload-box">
+                <h2>Upload Picture</h2>
+
+                <input type="file" id="photo" accept="image/*" hidden>
+
+                <button class="upload-btn" onclick="openPicker()">
+                    + Upload Picture
+                </button>
+
+                <div class="upload-info">
+                    <ul>
+                        <li>White or blue background</li>
+                        <li>File type: jpg, jpeg, png</li>
+                        <li>Recent passport size picture</li>
+                        <li>Face clearly visible without glasses</li>
+                    </ul>
+                </div>
+
+                <!-- Name + Size preview -->
+                <div id="imageInfo"></div>
+
+            </div>
+
+            <div class="trmess">
+                <div class="trems">
+
+                    <div class="condition">
+                        <input type="checkbox">
+                        <p>I hereby solemnly declare that all information provided in this application is true and
+                            accurate to the best of my knowledge. Furthermore, I agree to abide by all current and
+                            future rules, regulations, and policies established by FSI.</p>
+                    </div>
+
+                    <div class="condition">
+                        <input type="checkbox">
+                        <p>I accept the responsibility to maintain good conduct throughout the program and commit to
+                            focusing solely on learning. I will not engage in any political, unethical, or unrelated
+                            activities during my enrollment. Any violation may result in immediate cancellation of my
+                            admission</p>
+                    </div>
+
+                    <div class="condition">
+                        <input type="checkbox">
+                        <p>Upon completion of the course, I agree to successfully complete any project assigned by SMIT
+                            as part of the program requirements.</p>
+                    </div>
+
+                    <div class="condition">
+                        <input type="checkbox">
+                        <p>Female students are required to wear an abaya or hijab while attending classes.</p>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="btns">
+
+                <a href="registrationformpart2.html" class="back">
+                    <button id="back-btn">
+                        Back
+                    </button>
+                </a>
+
+                <div class="sub">
+                    <button id="sub-btn" disabled onclick="window.location.href='registrationformpart4.html'">
+                        Submit
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
 </body>
+
+<script src="script.js"></script>
 
 </html>
