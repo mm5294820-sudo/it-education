@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="assest/ChatGPT_Image_Feb_9__2026__01_04_36_PM-removebg-preview.png">
+    <title>FSI Registration form</title>
+</head>
+
+<body>
+    <div class="head">
+        <img src="assest/ChatGPT_Image_Feb_9__2026__01_04_36_PM-removebg-preview.png" alt="">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <div class="menu">
+        <div class="logo">
+            <img src="assest/ChatGPT_Image_Feb_9__2026__01_04_36_PM-removebg-preview.png" alt="">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+
+        <div class="menuss">
+            <div class="select-menu">
+
+                <a href="#">Home</a>
+                <a href="#">About</a>
+
+                <div class="">
+                    <div class="courses">
+                        <a href="#">Courses</a>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+
+
+                    <div class="course-item">
+                        <h1>25252</h1>
+                    </div>
+                </div>
+
+                <a href="#">Campus</a>
+                <a href="result.html">Check Result</a>
+
+            </div>
+
+            <div class="lines">
+                <hr class="line-1">
+            </div>
+
+            <div class="but">
+                <a href="index.html"><button>Enroll Now</button></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOADER -->
+    <div class="loader-wrapper" id="loader">
+        <div class="loading-text">
+            Loading<span class="dots"></span>
+        </div>
+    </div>
+
+    <!-- section1 -->
+
+    <div class="writ" style="visibility: hidden;" id="writ-content">
+        <div class="write-p">
+            <p>
+                Your ID card is ready! Enter your CNIC number and download now.
+            </p>
+            <a href="resadmitcard.html"><span>Click Here:</span> http://127.0.0.1:3000/courses/ resadmitcard.html</a>
+        </div>
+    </div>
+
+</body>
+
+<script src="script.js"></script>
+<script>
+    window.addEventListener('load', () => {
+        const loader = document.getElementById('loader');
+        const writContent = document.getElementById('writ-content');
+
+        setTimeout(() => {
+            loader.style.display = 'none';
+            writContent.style.visibility = 'visible';
+        }, 3500);
+    });
+</script>
+
+</html>
