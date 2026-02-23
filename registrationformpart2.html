@@ -55,6 +55,7 @@
         </div>
     </div>
 
+    <!-- section 1 -->
 
     <section>
 
@@ -67,22 +68,22 @@
 
                 <div class="det-input">
                     <h3>Full Name <span class="red">*</span></h3>
-                    <input type="text" placeholder="Enter Your Full Name">
+                    <input type="text" id="fullName" placeholder="Enter Your Full Name">
                 </div>
 
                 <div class="det-input">
                     <h3>Father Name <span class="red">*</span></h3>
-                    <input type="text" placeholder="Enter Your Father Name">
+                    <input type="text" id="fatherName" placeholder="Enter Your Father Name">
                 </div>
 
                 <div class="det-input">
                     <h3>Email <span class="red">*</span></h3>
-                    <input type="email" placeholder="your.email@example.com">
+                    <input type="email" id="email" placeholder="your.email@example.com">
                 </div>
 
                 <div class="det-input">
                     <h3>Phone <span class="red">*</span></h3>
-                    <input type="number" placeholder="Enter Your Phone number">
+                    <input type="number" id="phone" placeholder="Enter Your Phone number">
                 </div>
 
                 <div class="det-input">
@@ -92,29 +93,29 @@
 
                 <div class="det-input">
                     <h3>Father's ID Number <span class="op">(optional)</span></h3>
-                    <input type="text" placeholder="Enter ID Number" id="cnic-no" maxlength="15" inputmode="numeric">
+                    <input type="text" placeholder="Enter ID Number" id="father-cnic-no" maxlength="15" inputmode="numeric">
                 </div>
 
                 <div class="det-input">
                     <h3>Date of Birth <span class="red">*</span></h3>
-                    <input type="date" placeholder="Enter Your Phone number">
+                    <input type="date" id="dob" placeholder="Enter Your Phone number">
                 </div>
 
                 <div class="det-input">
                     <h3>Address <span class="red">*</span></h3>
-                    <input type="text" placeholder="Enter Your Complete addres (minimum 10 characters)">
+                    <input type="text" id="address" placeholder="Enter Your Complete addres (minimum 10 characters)">
                 </div>
 
                 <div class="btns">
 
-                    <a href="index.html" class="back">
+                    <a href="index.html" class="backs">
                         <button id="back-btn" >
                             Back
                         </button>
                     </a>
 
                     <div class="sub">
-                        <button id="sub-btn" disabled onclick="window.location.href='registrationformpart3.html'">
+                        <button id="sub-btn" disabled onclick="savePart2()">
                             Submit
                         </button>
                     </div>
