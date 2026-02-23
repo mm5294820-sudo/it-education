@@ -101,6 +101,19 @@
                 </select>
             </div>
 
+            <div class="select">
+                <h3>Do you have a Laptop? <span class="red">*</span></h3>
+                <div style="display: flex; justify-content: baseline; align-items: center; width: 100%; margin-left: 2.2rem; margin-top: 0.5rem;">
+                    <form>
+                        <input type="radio" name="laptop" id="laptop-yes" value="yes">
+                        <label for="laptop-yes">Yes</label>
+
+                        <input type="radio" name="laptop" id="laptop-no" value="no" style="margin-left: 1rem;">
+                        <label for="laptop-no">No</label>
+                    </form>
+                </div>
+            </div>
+
             <div class="upload-box">
                 <h2>Upload Picture</h2>
 
@@ -125,6 +138,9 @@
             </div>
 
             <div class="trmess">
+                <div class="heading" style="margin-bottom: 1rem;">
+                    <h1>Terms and Conditions</h1>
+                </div>
                 <div class="trems">
 
                     <div class="condition">
@@ -159,14 +175,14 @@
 
             <div class="btns">
 
-                <a href="registrationformpart2.html" class="back">
+                <a href="registrationformpart2.html" class="backs">
                     <button id="back-btn">
                         Back
                     </button>
                 </a>
 
                 <div class="sub">
-                    <button id="sub-btn" disabled onclick="window.location.href='registrationformpart4.html'">
+                    <button id="sub-btn" disabled onclick="savePart3()">
                         Submit
                     </button>
                 </div>
