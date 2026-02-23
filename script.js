@@ -358,3 +358,60 @@ document.getElementById("photo").addEventListener("change", function(){
 
     this.value = "";
 });
+
+function savePart1() {
+    const country = document.getElementById("country");
+    const gender = document.getElementById("gender");
+    const city = document.getElementById("city");
+    const course = document.getElementById("course");
+    const campus = document.getElementById("campus");
+
+    if (country && gender && city && course && campus) {
+        const data = {
+            country: country.value,
+            gender: gender.value,
+            city: city.value,
+            course: course.value,
+            campus: campus.value
+        };
+        localStorage.setItem("registrationData", JSON.stringify(data));
+    }
+}
+
+function savePart2() {
+    let data = JSON.parse(localStorage.getItem("registrationData")) || {};
+    
+    const ids = ["fullName", "fatherName", "email", "phone", "cnic-no", "father-cnic-no", "dob", "address"];
+    const keys = ["fullName", "fatherName", "email", "phone", "cnic", "fatherCnic", "dob", "address"];
+    
+    ids.forEach((id, index) => {
+        const el = document.getElementById(id);
+        if (el) data[keys[index]] = el.value;
+    });
+
+    localStorage.setItem("registrationData", JSON.stringify(data));
+    window.location.href = 'registrationformpart3.html';
+}
+
+function savePart3() {
+    let data = JSON.parse(localStorage.getItem("registrationData")) || {};
+    
+    const ids = ["Computer Proficiency", "Last Qualification", "Where did you hear about us?"];
+    const keys = ["computerProficiency", "lastQualification", "hearAboutUs"];
+    
+    ids.forEach((id, index) => {
+        const el = document.getElementById(id);
+        if (el) data[keys[index]] = el.value;
+    });
+
+    const laptopYes = document.getElementById("laptop-yes");
+    if (laptopYes) data.laptop = laptopYes.checked ? "Yes" : "No";
+
+    const photo = document.getElementById("photo");
+    if (photo && photo.files.length > 0) {
+        data.imageName = photo.files[0].name;
+    }
+
+    localStorage.setItem("registrationData", JSON.stringify(data));
+    window.location.href = 'registrationformpart4.html';
+}
