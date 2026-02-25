@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="assest/ChatGPT_Image_Feb_9__2026__01_04_36_PM-removebg-preview.png">
+    <title>FSI Registration form</title>
+</head>
+
+<style>
+    .btn-1 {
+        background-color: #0f6db5;
+        color: white;
+    }
+</style>
+
+<body>
+    <div class="head">
+        <img src="assest/ChatGPT_Image_Feb_9__2026__01_04_36_PM-removebg-preview.png" alt="">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <div class="menu">
+        <div class="logo">
+            <img src="assest/ChatGPT_Image_Feb_9__2026__01_04_36_PM-removebg-preview.png" alt="">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+
+        <div class="menuss">
+            <div class="select-menu">
+
+                <a href="#">Home</a>
+                <a href="#">About</a>
+
+                <div class="">
+                    <div class="courses">
+                        <a href="#">Courses</a>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+
+
+                    <div class="course-item">
+                        <h1>25252</h1>
+                    </div>
+                </div>
+
+                <a href="#">Campus</a>
+                <a href="result.html">Check Result</a>
+
+            </div>
+
+            <div class="lines">
+                <hr class="line-1">
+            </div>
+
+            <div class="but">
+                <a href="index.html"><button>Enroll Now</button></a>
+            </div>
+        </div>
+    </div>
+
+    <section>
+
+        <div class="part-1">
+            <div class="head-one">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <i class="fa-solid fa-angle-right"></i>
+                <h3>Enroll Now</h3>
+            </div>
+
+            <div class="head-second">
+                <h1>Registration Form</h1>
+                <p>Start your journey towards excellence. Fill out the form to apply for our courses</p>
+            </div>
+        </div>
+
+        <div id="part-sec">
+            <div class="part-sec">
+                <a href="index.html" class="btn btn-1">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                    <h3>Registration Form</h3>
+                </a>
+                <a href="resadmitcard.html" class="btn btn-2">
+                    <i class="fa-regular fa-address-card"></i>
+                    <h3>Download ID Card</h3>
+                </a>
+                <a href="result.html" class="btn btn-3">
+                    <i class="fa-solid fa-square-poll-horizontal"></i>
+                    <h3>Result</h3>
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+    <section>
+        <div class="course">
+            
+            <h1 class="heid">Course Details</h1>
+
+            <div class="select">
+                <h3>Select Country <span class="blue">*</span></h3>
+                <select name="country" id="country">
+                    <option value="Select country ">Select country </option>
+                </select>
+            </div>
+
+            <div class="select">
+                <h3>Select Gender <span class="blue">*</span></h3>
+                <select name="gender" id="gender" disabled>
+                    <option value="Select Gender">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+
+            <div class="select">
+                <h3>Select City <span class="blue">*</span></h3>
+                <select name="city" id="city" disabled>
+                    <option value="Select Gender">Select City</option>
+                    <option value="male">Male</option>
+                </select>
+            </div>
+
+            <div class="select">
+                <h3>Select Course <span class="blue">*</span></h3>
+                <select name="course" id="course" disabled>
+                    <option value="Select Course">Select Course Or Event</option>
+                </select>
+            </div>
+
+            <div class="select select-21">
+                <h3>Select Campus <span class="blue">*</span></h3>
+                <select name="Campus" id="campus" disabled>
+                    <option value="Select Campus">Select Campus</option>
+                </select>
+            </div>
+
+            <a href="registrationformpart2.html" class="btn-sub">
+                <button disabled id="sub-btn" onclick="savePart1()">
+                    Submit
+                </button>
+            </a>
+
+        </div>
+    </section>
+
+</body>
+
+<script src="script.js"></script>
+
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="assest/ChatGPT_Image_Feb_9__2026__01_04_36_PM-removebg-preview.png">
+    <title>FSI Result</title>
+</head>
+
+<style>
+    .btn-3 {
+        background-color: #0f6db5;
+        color: white;
+    }
+</style>
+
+<body>
+    <div class="head">
+        <img src="assest/ChatGPT_Image_Feb_9__2026__01_04_36_PM-removebg-preview.png" alt="">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <div class="menu">
+        <div class="logo">
+            <img src="assest/ChatGPT_Image_Feb_9__2026__01_04_36_PM-removebg-preview.png" alt="">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+
+        <div class="menuss">
+            <div class="select-menu">
+
+                <a href="#">Home</a>
+                <a href="#">About</a>
+
+                <div class="">
+                    <div class="courses">
+                        <a href="#">Courses</a>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+
+
+                    <div class="course-item">
+                        <h1>25252</h1>
+                    </div>
+                </div>
+
+                <a href="#">Campus</a>
+                <a href="result.html">Check Result</a>
+
+            </div>
+
+            <div class="lines">
+                <hr class="line-1">
+            </div>
+
+            <div class="but">
+                <a href="index.html"><button>Enroll Now</button></a>
+            </div>
+        </div>
+    </div>
+
+
+    <section>
+
+        <div class="part-1">
+            <div class="head-one">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <i class="fa-solid fa-angle-right"></i>
+                <h3>Result</h3>
+            </div>
+
+            <div class="head-second">
+                <h1>Check Your Result</h1>
+                <p>Enter your roll number to view your examination results</p>
+            </div>
+        </div>
+
+        <div id="part-sec">
+            <div class="part-sec">
+                <a href="index.html" class="btn btn-1">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                    <h3>Registration Form</h3>
+                </a>
+                <a href="resadmitcard.html" class="btn btn-2">
+                    <i class="fa-regular fa-address-card"></i>
+                    <h3>Download ID Card</h3>
+                </a>
+                <a href="result.html" class="btn btn-3">
+                    <i class="fa-solid fa-square-poll-horizontal"></i>
+                    <h3>Result</h3>
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+    <section>
+
+        <div class="id-heading">
+            <h2>Check Your Result</h2>
+            <p>Enter your roll number to view your results</p>
+        </div>
+
+        <h3 class="result">Roll Number <span class="blue">*</span></h3>
+
+        <div class="otp">
+            <input type="number" inputmode="numeric" maxlength="1" onkeydown="handleKey(event,0)">
+            <input type="number" inputmode="numeric" maxlength="1" onkeydown="handleKey(event,1)">
+            <input type="number" inputmode="numeric" maxlength="1" onkeydown="handleKey(event,2)">
+            <input type="number" inputmode="numeric" maxlength="1" onkeydown="handleKey(event,3)">
+            <input type="number" inputmode="numeric" maxlength="1" onkeydown="handleKey(event,4)">
+        </div>
+
+        <div class="but-search">
+            <button>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                search
+            </button>
+        </div>
+    </section>
+
+    <section>
+        <div class="res">
+            <div id="result">
+                <div class="head-res">
+                    <h2>Result :</h2>
+                </div>
+
+                <div>
+                    <h2>Roll No :</h2>
+                    <H3>458202</H3>
+                </div>
+
+                <div>
+                    <h2>Grade :</h2>
+                    <H3></H3>
+                </div>
+
+                <div>
+                    <h2>Obtainaed Marks</h2>
+                    <H3>120</H3>
+                </div>
+
+                <div>
+                    <h2>Percantage</h2>
+                    <H3>70%</H3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+<script src="script.js"></script>
+
+</html>
