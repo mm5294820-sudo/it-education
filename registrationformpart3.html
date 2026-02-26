@@ -180,7 +180,7 @@
                 </a>
 
                 <div class="sub">
-                    <button id="sub-btn" disabled onclick="savePart3()">
+                    <button id="sub-btn" type="button" disabled onclick="savePart3()">
                         Submit
                     </button>
                 </div>
@@ -246,22 +246,27 @@
     document.querySelectorAll('.condition input[type="checkbox"]').forEach(cb => cb.addEventListener('change', checkValidation));
 
     function savePart3() {
-        const existingData = JSON.parse(localStorage.getItem('registrationData')) || {};
-        const newData = {
-            ...existingData,
-            computerProficiency: document.getElementById('Computer Proficiency').value,
-            lastQualification: document.getElementById('Last Qualification').value,
-            hearAbout: document.getElementById('Where did you hear about us?').value,
-            laptop: document.querySelector('input[name="laptop"]:checked').value,
-            imageData: imageDataUrl
-        };
+        try {
+            const existingData = JSON.parse(localStorage.getItem('registrationData')) || {};
+            const newData = {
+                ...existingData,
+                computerProficiency: document.getElementById('Computer Proficiency').value,
+                lastQualification: document.getElementById('Last Qualification').value,
+                hearAbout: document.getElementById('Where did you hear about us?').value,
+                laptop: document.querySelector('input[name="laptop"]:checked').value,
+                imageData: imageDataUrl
+            };
 
-        const allRegistrations = JSON.parse(localStorage.getItem('allRegistrations')) || [];
-        allRegistrations.push(newData);
-        localStorage.setItem('allRegistrations', JSON.stringify(allRegistrations));
+            const allRegistrations = JSON.parse(localStorage.getItem('allRegistrations')) || [];
+            allRegistrations.push(newData);
+            localStorage.setItem('allRegistrations', JSON.stringify(allRegistrations));
 
-        localStorage.setItem('registrationData', JSON.stringify(newData));
-        window.location.href ="registrationformpart4.html";
+            localStorage.setItem('registrationData', JSON.stringify(newData));
+            window.location.href = "registrationformpart4.html";
+        } catch (error) {
+            console.error("Error saving data:", error);
+            alert("Error: Image size might be too large for storage. Please try a smaller image.");
+        }
     }
 </script>
 
