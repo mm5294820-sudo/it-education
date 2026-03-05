@@ -429,7 +429,7 @@ if (resultSearchBtn) {
         document.getElementById("result-percentage").textContent = studentResult.percentage;
         document.getElementById("result-class-day").textContent = studentResult["class day"];
         document.getElementById("result-class-time").textContent = studentResult["class time"];
-        if (resultContainer) resultContainer.style.display = "block";
+        if (resultContainer) resultContainer.style.display = "flex";
       } else {
         if (errorMessage) errorMessage.style.display = "block";
       }
