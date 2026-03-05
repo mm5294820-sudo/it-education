@@ -1,0 +1,22 @@
+[
+    {
+        "id":1,
+        "name":"muzammil",
+        "Father name":"sikander",
+        "roll no":"46856",
+        "status":"Pass",
+        "percentage":"80%",
+        "class time":"12:00pm - 2:00pm",
+        "class day":"Monday - Thusday"
+    },
+    {
+        "id":2,
+        "name":"Awais",
+        "Father name":"Tofique",
+        "roll no":"46854",
+        "status":"Pass",
+        "percentage":"80%",
+        "class time":"12:00pm - 2:00pm",
+        "class day":"Monday - Thusday"
+    }
+]
