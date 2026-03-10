@@ -18,5 +18,14 @@
         "percentage":"80%",
         "class time":"12:00pm - 2:00pm",
         "class day":"Monday - Thusday"
-    }
+    },
+    {
+        "id":3,
+        "name":"Muhammad Faizan",
+        "Father name":"Aftab Ahmed",
+        "roll no":"27722",
+        "status":"Fail",
+        "percentage":"30%"
+        }
+
 ]
