@@ -55,7 +55,7 @@ if (cnicInput) {
 const countryData = {
   Pakistan: ["Karachi", "Lahore", "Islamabad", "Quetta"],
   Turkey: ["Istanbul", "Ankara", "Izmir", "Bursa"],
-  Iran: ["Tehran", "Mashhad", "Isfahan", "Tabriz"],
+  // Iran: ["Tehran", "Mashhad", "Isfahan", "Tabriz"],
 };
 
 const courseData = {
@@ -63,6 +63,7 @@ const courseData = {
     "Graphic Design With Ai",
     "Web App Development",
     "Shopify Ecommerce",
+    
   ],
   Lahore: [
     "Graphic Design With Ai",
@@ -77,16 +78,43 @@ const courseData = {
   Quetta: [
     "Graphic Design With Ai",
     "Web App Development",
-    "Shopify Ecommerce",
   ],
-  Istanbul: ["Web Development", "Graphic Design"],
-  Ankara: ["Web Development", "Graphic Design"],
-  Izmir: ["Web Development", "Graphic Design"],
-  Bursa: ["Web Development", "Graphic Design"],
-  Tehran: ["Web Development", "Graphic Design"],
-  Mashhad: ["Web Development", "Graphic Design"],
-  Isfahan: ["Web Development", "Graphic Design"],
-  Tabriz: ["Web Development", "Graphic Design"],
+
+  Istanbul: [
+    "Web Development", 
+    "Graphic Design"
+  ],
+  Ankara: [
+    "Web Development",
+    "Graphic Design"
+  ],
+  Izmir: [
+    "Web Development",
+    "Graphic Design"
+  ],
+  Bursa: [
+    "Web Development",
+    "Graphic Design"
+  ],
+  Tehran: [
+    "Web Development", 
+    "Graphic Design"
+  ],
+  Mashhad: [
+    "Web Development",
+     "Graphic Design"
+
+  ],
+  Isfahan: [
+    "Web Development",
+     "Graphic Design"
+
+  ],
+  Tabriz: [
+    "Web Development",
+     "Graphic Design"
+
+  ],
 };
 
 const campusData = {
