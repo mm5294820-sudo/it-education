@@ -53,7 +53,7 @@ if (cnicInput) {
 }
 
 const countryData = {
-  Pakistan: ["Karachi", "Lahore", "Islamabad", "Quetta"],
+  Pakistan: ["Karachi", "Lahore", "Islamabad", "Quetta", "Faislabad"],
   Turkey: ["Istanbul", "Ankara", "Izmir", "Bursa"],
   // Iran: ["Tehran", "Mashhad", "Isfahan", "Tabriz"],
 };
@@ -61,23 +61,66 @@ const countryData = {
 const courseData = {
   Karachi: [
     "Graphic Design With Ai",
-    "Web App Development",
+    "Modren Web App Development",
     "Shopify Ecommerce",
-    
+    "Data Analytic With Phyton",
+    "UI & uX Design With Ai",
+    "Video Animation",
+    "AI And Data Science",
+    "Mobile App Development With Flutter",
+    "Mobile App Development With React Native",
+    "Digital Marketing With Ai",
+    "Backend Development",
+    "Certified Computer Operator",
+    "Cloud Data Engenering"
+
   ],
   Lahore: [
     "Graphic Design With Ai",
-    "Web App Development",
-    "Shopify Ecommerce",
-  ],
+    "Modren Web App Development",
+    // "Shopify Ecommerce",
+    // "Data Analytic With Phyton",
+    "UI & uX Design With Ai",
+    // "Video Animation",
+    // "AI And Data Science",
+    "Mobile App Development With Flutter",
+    // "Mobile App Development With React Native",
+    "Digital Marketing With Ai"
+  //   "Backend Development",
+  //   "Certified Computer Operator",
+  //   "Cloud Data Engenering"
+ ],
   Islamabad: [
     "Graphic Design With Ai",
-    "Web App Development",
-    "Shopify Ecommerce",
+    "Modren Web App Development",
+    // "Shopify Ecommerce",
+    // "Data Analytic With Phyton",
+    // "UI & uX Design With Ai",
+    // "Video Animation",
+    // "AI And Data Science",
+    "Mobile App Development With Flutter",
+    // "Mobile App Development With React Native",
+    // "Digital Marketing With Ai",
+    // "Backend Development",
+    // "Certified Computer Operator",
+    // "Cloud Data Engenering"
   ],
   Quetta: [
-    "Graphic Design With Ai",
-    "Web App Development",
+  ],
+  Faislabad: [
+    // "Graphic Design With Ai",
+    // "Modren Web App Development",
+    // "Shopify Ecommerce",
+    // "Data Analytic With Phyton",
+    "UI & uX Design With Ai",
+    // "Video Animation",
+    // "AI And Data Science",
+    // "Mobile App Development With Flutter",
+    "Mobile App Development With React Native",
+    "Digital Marketing With Ai",
+    // "Backend Development",
+    // "Certified Computer Operator",
+    "Cloud Data Engenering"
   ],
 
   Istanbul: [
@@ -122,6 +165,7 @@ const campusData = {
   Lahore: ["Gulberg Campus", "DHA Campus", "Johar Town Campus"],
   Islamabad: ["Blue Area Campus", "F-10 Markaz Campus"],
   Quetta: ["Jinnah Road Campus", "Zarghoon Road Campus"],
+  Faislabad: ["Jinnah Road Campus", "Zarghoon Road Campus"],
   Istanbul: ["Taksim Campus", "Besiktas Campus"],
   Ankara: ["Kizilay Campus", "Cankaya Campus"],
   Izmir: ["Konak Campus", "Bornova Campus"],
@@ -153,7 +197,7 @@ if (countrySelect && citySelect && genderSelect) {
     genderSelect.disabled = true;
 
     if (this.value) {
-      let genders = ["Male", "Female"];
+      let genders = ["Male", "Female", "other"];
       genders.forEach(function (gender) {
         let option = document.createElement("option");
         option.value = gender;
